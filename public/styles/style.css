@@ -1,0 +1,87 @@
+body{
+    background-color: #111;
+    font-family: 'Cabin', sans-serif;
+    color: lightblue;
+    font-size: 18pt;
+    margin: 5px, 10px;
+}
+h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.navbar{
+    display: flex;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.nav{
+    font-weight: 600;
+    font-size: 24pt;
+    text-decoration: none;
+    text-align: center;
+    color: lightblue;
+    padding: 2px, 3px;
+    width: 150px;
+}
+.task-list{
+    margin-left: 20px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+.task-item{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.actions{
+    display: flex;
+    background-color: darkblue;
+    gap: 3px;
+    justify-content: space-evenly;
+}
+.hidden{
+    display: none;
+}
+input{
+    font-size: 1rem;
+}
+input[type="submit"]{
+    padding: 3px, 2px;
+    border: 1px solid lightblue;
+    background-color: #111;
+    color: lightblue;
+    border-radius: 12pt;
+}
+input[type="text"]{
+    background-color: #222;
+    color: lightblue;
+    border: 1px solid lightblue
+}
+.task-info{
+    display: flex;
+    gap: 3px;
+}
+.active{
+    border-bottom: 3px solid lightblue;
+}
+.selected{
+    background-color: darkblue;
+}
+@media (max-width: 1080px) {
+    body{
+        font-size: 16pt;
+    }
+    .navbar{
+        width: 100%;
+    }
+    .nav{
+        width: 50%;
+    }
+    
+    input[type="text"]{
+        width: 90%;
+    }
+}

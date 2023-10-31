@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Do It <%= title %></title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Do It</h1>
+        <div class="navbar">
+            <a <% if(active === "today"){ %> class="nav active" <% } else{ %> class="nav" <% } %> role="button" href="/today">Today</a>
+            <a <% if(active === "tomorrow"){ %> class="nav active" <% } else{ %> class="nav" <% } %>  role="button" href="/tomorrow">Tomorrow</a>
+        </div>
+
+        <main>

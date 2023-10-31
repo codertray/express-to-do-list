@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs", {active: "today",}) %>
+
+<form action="/today/add" method="POST">
+    <input type="text" name="newTask" placeholder="New Task">
+    <input type="submit" value="add">
+</form>
+
+<div class="task-list">
+    <% if(locals.tasks && tasks.length >= 1){ %>
+        <% for(var i=0; i<tasks.length; i++){ %>
+            <div class="task-item" id="task-<%= i %>">
+                <div class="task-info">
+                    <input type="checkbox" class="checkbox">
+                    <p><%= tasks[i] %></p>
+                </div>
+                <div class="actions hidden">
+                    <form action="/postpone" method="POST">
+                        <input type="hidden" name="taskId" value="<%= i %>">
+                        <input type="submit" value="Postpone">
+                    </form>
+                    <form action="/today/delete" method="POST">
+                        <input type="hidden" name="taskId" value="<%= i %>">
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <p class="starter">Your Tasks will appear here!</p>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>
